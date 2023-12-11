@@ -1,0 +1,40 @@
+/* UserProfile.css */
+
+.user-profile-container {
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-image-container {
+    margin-right: 20px;
+  }
+  
+  .user-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-details {
+    flex-grow: 1;
+  }
+  
+  .user-name {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+  }
+  
+  .user-email,
+  .user-role {
+    margin: 0;
+    font-size: 1rem;
+    color: #666;
+  }
+  
