@@ -120,7 +120,7 @@ const navigate = useNavigate()
         <div className="productListContainer">
           <div className="create_btn">
           <h1 id="productListHeading">ALL PRODUCTS</h1>
-          <Button variant="contained" color='tomato' onClick={()=> navigate('/admin/product')}>Create Product</Button>
+          <Button  variant="contained" color="primary" onClick={() => navigate('/admin/product')}>Create Product</Button>
           </div>
 
           <DataGrid
