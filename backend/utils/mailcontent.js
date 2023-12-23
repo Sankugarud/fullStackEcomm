@@ -2,7 +2,6 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 
 require('dotenv').config({ path: path.join(__dirname, '../../.env') });
-
 const createTransporter = () => {
   
   return nodemailer.createTransport({
@@ -19,12 +18,12 @@ const createTransporter = () => {
   });
 };
 
-const mailOptions = (email, resetToken,protocol) => {
+const mailOptions = (email, resetToken,protocol,host) => {
   return {
     from: 'sanketgarud@gmail.com',
     to: email,
     subject: 'Password Reset Request',
-    text: `To reset your password, click on the following link: ${protocol}://localhost:3000/password/reset/${resetToken}`,
+    text: `To reset your password, click on the following link:${protocol}://${host}/api/v1/auth/password/reset/${resetToken}`,
   };
 };
 

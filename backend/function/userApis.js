@@ -92,6 +92,7 @@ exports.logout = (req, res) => {
 }
 exports.forgotPassword = async (req, res) => {
     try {
+
       const { email } = req.body;
       const user = await users.findOne({ email });
       if (!user) {
@@ -108,7 +109,7 @@ exports.forgotPassword = async (req, res) => {
       // Create nodemailer transporter
       const transporter = createTransporter();
       // Send the email
-      await transporter.sendMail(mailOptions(user.email, resetToken,req.protocol));
+      await transporter.sendMail(mailOptions(user.email, resetToken,req.protocol,req.get("host")));
   
       res.status(200).json({
         success: true,
@@ -261,7 +262,7 @@ exports.getAllUser = async (req, res) => {
   
         res.status(200).json({
         success: true,
-        allUser,
+        allUser:allUser,
         });
     } catch (error) {
         res.status(501).json({

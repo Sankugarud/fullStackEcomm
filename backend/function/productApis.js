@@ -5,6 +5,7 @@ const ApiFeatures = require('../utils/apifeatcher.js');
 exports.createProduct = async (req, res) => {
        
         try {
+          console.log(req.body)
             req.body.user = req.user._id;
             const product = await Products.create(req.body);
             
@@ -39,12 +40,20 @@ exports.getproduct = async (req, res) => {
   
 //get all product admin
 exports.getAdminProducts = async (req, res, next) => {
-    const products = await Product.find();
+  try {
+    const products = await Products.find();
   
     res.status(200).json({
       success: true,
       products,
     });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error,
+  });
+  }
+    
 };
   //get all products
 exports.getProducts = async (req, res) => {
@@ -135,6 +144,7 @@ exports.deleteproduct = async (req,res)=>{
 //create or update product reviews
 exports.createProductReview = async (req, res) => {
     try {
+      console.log(req.body)
         const { rating, comment, productId } = req.body;
         if (!req.user) {
             return res.status(401).json({

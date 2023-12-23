@@ -32,18 +32,7 @@ const UpdateProfile = ({ history }) => {
     dispatch(updateProfile(myForm));
   };
 
-  const updateProfileDataChange = (e) => {
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      if (reader.readyState === 2) {
-        setAvatarPreview(reader.result);
-      }
-    };
-
-    reader.readAsDataURL(e.target.files[0]);
-  };
-
+  
   useEffect(() => {
     if (user) {
       setName(user.name);
@@ -107,15 +96,7 @@ const UpdateProfile = ({ history }) => {
                   />
                 </div>
 
-                <div id="updateProfileImage">
-                  <img src={avatarPreview} alt="Avatar Preview" />
-                  <input
-                    type="file"
-                    name="avatar"
-                    accept="image/*"
-                    onChange={updateProfileDataChange}
-                  />
-                </div>
+                
                 <input
                   type="submit"
                   value="Update"

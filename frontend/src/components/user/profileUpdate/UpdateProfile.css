@@ -4,19 +4,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
+
+
   }
   
   .updateProfileBox {
     background-color: #fff;
-    padding: 20px;
+    padding:  20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.226);
+    border-left: 1px solid rgba(0, 0, 0, 0.226);
   }
   
   .updateProfileHeading {
     text-align: center;
     color: #333;
+    font-size: 1.5rem;
   }
   
   .updateProfileForm {
@@ -55,16 +60,17 @@
   
   .updateProfileBtn {
     background-color: #4caf50;
-    color: #fff;
+    color: #525050;
     padding: 10px 15px;
     border: none;
+    width: 100px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
   .updateProfileBtn:hover {
-    background-color: #45a049;
+    background-color: tomato;
   }
   
   /* Add additional styling as needed */

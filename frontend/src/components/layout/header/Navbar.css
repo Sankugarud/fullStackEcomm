@@ -1,0 +1,91 @@
+.navbar{
+    margin: 0.5rem 2rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    display:flex;
+    gap:10rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s;
+
+}
+.left_side{
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.5s;
+
+}
+.chooseMenu{
+    display: flex;
+}
+.left_side img{
+    width: 20rem;
+}
+.right_side{
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    transition: all 0.5s;
+}
+.middle_side{
+    width: 70%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    transition: all 0.5s;
+
+}
+.left_side:hover {
+    color: tomato;
+}
+.middle_side a{
+        transition: all 0.5s;
+}
+.middle_side a:hover {
+    color: tomato; 
+}
+
+.end_side button:hover {
+    color: tomato;
+}
+
+.cartIcon {
+    cursor: pointer;
+}
+
+
+.middle_side a{
+    text-decoration: none;
+    color: rgb(68, 67, 67);
+}
+.inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.middle_side input{
+    margin: auto 0px;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    border-radius: 1.2rem;
+}
+.end_side{
+    justify-items: center;
+    align-items: center;
+    justify-content: right;
+    text-align: center;
+    width: 25%;
+    display: flex;
+    gap: 2rem;
+    transition: all 0.5s;
+
+}
+.end_side svg {
+    margin: auto 0px;
+    cursor: pointer;
+}

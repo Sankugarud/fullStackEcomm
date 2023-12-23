@@ -1,0 +1,153 @@
+.cartContainer{
+    margin: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.emptyCart {
+    margin: auto;
+    text-align: center;
+    padding: 10vmax;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .emptyCart > svg {
+    font-size: 5vmax;
+    color: tomato;
+  }
+  .emptyCart > p {
+    font-size: 2vmax;
+  }
+  .emptyCart > a {
+    background-color: rgb(51, 51, 51);
+    color: white;
+    border: none;
+    padding: 1vmax 3vmax;
+    cursor: pointer;
+    font: 400 1vmax "Roboto";
+    text-decoration: none;
+  }
+  
+
+.leftSideSection{
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+
+}
+.cartPage{
+    margin: 1rem 5rem 5rem 5rem;
+}
+.CartItemCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vmax;
+    height: 15vmax;
+    align-items: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+
+  }
+  .CartItemCardImg{
+    width: 30%;
+
+}
+.deleteIconbtn > svg {
+    color: rgb(150, 22, 0);
+    font-size: 2rem;
+}
+  .cartDiscriptions{
+    padding-right: 2rem;
+    height: 11rem;
+    width: 70%;
+    padding-left: 5rem;
+
+  }
+  .cartTitle{
+    display: flex;
+    height: 6rem;
+    justify-content: space-between;
+
+  }
+  .cartInput{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6rem;
+  }
+  .cartSubtotal{
+    font-size: 1.2rem;
+    color: red;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+  }
+  .redColor{
+    color: red;
+  }
+  .cartName{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+  }
+  .cartName a{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+  }
+  .price{
+    color: green;
+    font-size: 1rem;
+  }
+  .cartName div{
+    font-size: 1rem;
+  }
+
+  .CartItemCardImg > img {
+    width: 10vmax;
+  }
+  .left_cartContainer{
+    width: 100%;
+  }
+
+
+  .ordersummary{
+    font-size: 1.2rem;
+    text-align: start;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+
+  }
+  .cartGrossProfit{
+    padding: 1rem;
+    width: 30%;
+    height: 55vh;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+  }
+  .shippingChanges{
+    margin-top: 25vh;
+    display: flex;
+    justify-content: space-between;
+  }
+  .shippingChanges{
+    font-size: 1rem;
+    color: rgb(71, 71, 71);
+  }
+  .cartGrossProfitBox{
+    display: flex;
+    justify-content: space-between;
+  }
+  .cartGrossProfitBox p {
+    font-size: 1rem;
+    color: rgb(71, 71, 71);
+  }
+  .checkOutBtn{
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: tomato;
+    color: white;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    
+  }
+  

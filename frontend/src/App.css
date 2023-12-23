@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  font: 400 1.2vmax "Roboto";
+  color: rgb(58, 56, 56);
 }
 
 .App-logo {

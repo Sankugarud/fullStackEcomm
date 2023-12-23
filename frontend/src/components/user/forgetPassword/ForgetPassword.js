@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { forgotPassword } from "../../redux/action/usercalled";
 import "./ForgetPassword.css";
+import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import { useAlert } from "react-alert";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const dispatch = useDispatch();
+  const alert = useAlert();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -13,7 +16,7 @@ const ForgotPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    alert.success("Email Send Successfuly")
     // Dispatch the forgotPassword action with the provided email
     dispatch(forgotPassword({email}));
 
@@ -21,10 +24,12 @@ const ForgotPassword = () => {
 
   return (
     <div className="forgotPasswordContainer">
+                <div className="forgotPasswordBox">
+
       <h2 className="forgotPasswordHeading">Forgot Password</h2>
       <form className="forgotPasswordForm" onSubmit={handleSubmit}>
-        <div className="forgotPasswordInput">
-          <label>Email:</label>
+        <div className="forgotPasswordEmail">
+          <MailOutlineIcon />
           <input
             type="email"
             placeholder="Enter your email"
@@ -37,6 +42,7 @@ const ForgotPassword = () => {
           Submit
         </button>
       </form>
+      </div>
     </div>
   );
 };

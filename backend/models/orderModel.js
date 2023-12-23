@@ -18,7 +18,7 @@ const orderSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
-        pincode: {
+        pinCode: {
             type: Number,
             required: true,
         },
@@ -58,16 +58,6 @@ const orderSchema = new mongoose.Schema({
         ref: "User",
         required: true,
     },
-    paymentInfo: {
-        id: {
-            type: String,
-            required: true,
-        },
-        status: {
-            type: String,
-            required: true,
-        },
-    },
     paidAt: {
         type: Date,
         required: true,
@@ -105,28 +95,3 @@ const orderSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model("Order", orderSchema);
-// {
-//     "shippingInfo":{
-//         "address":"xyz",
-//         "city":"mumbai",
-//         "state":"maharashtra",
-//         "country":"india",
-//         "mobileNo":7715012295,
-//         "pincode":400078
-//     },
-//     "itemOrder":{
-//         "product":"6560a1d84409cbde19534c3f",
-//         "name":"iphone10",
-//         "price":20000,
-//         "image":"abc",
-//         "quantity":2
-//     },
-//     "paymentInfo":{
-//         "id":"sample",
-//         "status":"success"
-//     },
-//     "itemsPrice":20000,
-//     "taxPrice":36,
-//     "shippingPrice":100,
-//     "totalPrice":20136
-// }

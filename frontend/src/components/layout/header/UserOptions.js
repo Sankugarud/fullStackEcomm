@@ -6,12 +6,12 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import PersonIcon from '@mui/icons-material/Person';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import ListAltIcon from '@mui/icons-material/ListAlt';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../redux/action/usercalled";
 import { toast } from 'react-toastify';
-
+import {loginReset, registerReset } from "../../redux/action/userAction";
+import './Navbar.css'
 
 
 const UserOptions = ({ user }) => {
@@ -31,30 +31,17 @@ const UserOptions = ({ user }) => {
   const options = [
     { icon: <ListAltIcon />, name: "Orders", func: orders },
     { icon: <PersonIcon />, name: "Profile", func: account },
-    {
-      icon: (
-        <ShoppingCartIcon
-          // style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
-        />
-      ),
-      // name: `Cart(${cartItems.length})`,
-      func: cart,
-    },
+    
     { icon: <ExitToAppIcon />, name: "Logout", func: handleLogout },
   ];
-
+if(user){
   if (user.role === "admin") {
-    options.unshift({
-      icon: <DashboardIcon />,
-      name: "Dashboard",
-      func: dashboard,
-    });
+    options.unshift(
+      { icon: <DashboardIcon />, name: "Admin", func: admin } 
+    );
   }
-
-  function dashboard() {
-    navigate("/admin/dashboard");
-    handleClose();
-  }
+}
+ 
 
   function orders() {
     navigate("/orders");
@@ -66,22 +53,26 @@ const UserOptions = ({ user }) => {
     handleClose();
   }
 
-  function cart() {
-    navigate("/cart");
+
+
+  function admin() {
+    navigate("/admin/dashboard");
     handleClose();
   }
 
-
-function handleLogout() {
-  dispatch(logoutUser());
-  toast.success("Logout Successfully"); // Use toast.success instead of alert.success
-  navigate("/products");
-  handleClose();
-}
-
+  function handleLogout() {
+    dispatch({type:loginReset});
+    dispatch({type:registerReset});
+    dispatch(logoutUser());
+  
+    toast.success("Logout Successfully");
+    navigate("/products");
+    handleClose();
+  }
 
   return (
     <Fragment>
+      <div className="chooseMenu">
       <div onClick={handleClick}>
         Dashboard <ArrowDropDownIcon />
       </div>
@@ -96,6 +87,8 @@ function handleLogout() {
           </MenuItem>
         ))}
       </Menu>
+      </div>
+      
     </Fragment>
   );
 };

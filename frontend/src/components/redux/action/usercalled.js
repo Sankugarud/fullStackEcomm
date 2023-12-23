@@ -1,12 +1,12 @@
 import axios from "axios";
-import { loginFail, loginRequest, loginSuccess, registerRequest, registerSuccess,registerFail, clearError, logoutsuccess, logoutfail, loadSuccess, loadRequest, loadFail, updateProfileRequest, updateProfileSuccess, updateProfileFail, resetPasswordFail, resetPasswordSuccess, resetPasswordRequest, forgotPasswordFail, forgotPasswordSuccess, forgotPasswordRequest, updatePasswordFail, updatePasswordSuccess, updatePasswordRequest } from "./userAction";
+import { loginFail, loginRequest, loginSuccess, registerRequest, registerSuccess,registerFail, clearError, logoutsuccess, logoutfail, loadSuccess, loadRequest, loadFail, updateProfileRequest, updateProfileSuccess, updateProfileFail, resetPasswordFail, resetPasswordSuccess, resetPasswordRequest, forgotPasswordFail, forgotPasswordSuccess, forgotPasswordRequest, updatePasswordFail, updatePasswordSuccess, updatePasswordRequest, allUsersRequest, allUsersFail, allUsersSuccess, userDetailsRequest, userDetailsSuccess, userDetailsFail, deleteUserFail, deleteUserSuccess, deleteUserRequest, updateUserFail, updateUserSuccess, updateUserRequest } from "./userAction";
 
 
 export const loginUser = ({email, password}) => async (dispatch) => {
     try {
       
         dispatch({type:loginRequest});
-        const {data} = await axios.post('http://localhost:5000/api/v1/auth/login',{email,password}, {headers:{
+        const {data} = await axios.post('/api/v1/auth/login',{email,password}, {headers:{
             'Content-Type': 'application/json',
         },
         withCredentials: true,
@@ -23,7 +23,7 @@ export const registerUser = ( {email,password,name,avatar}) => async (dispatch) 
   
 
         dispatch({type:registerRequest})
-            const {data} = await axios.post('http://localhost:5000/api/v1/auth/register',{name,email,password,avatar}, {headers:{
+            const {data} = await axios.post('/api/v1/auth/register',{name,email,password,avatar}, {headers:{
                 'Content-Type': 'application/json',
                 },
                 withCredentials: true,
@@ -38,7 +38,7 @@ export const registerUser = ( {email,password,name,avatar}) => async (dispatch) 
 //logout
 export const logoutUser = () => async (dispatch) => {
     try {
-      await axios.get(`http://localhost:5000/api/v1/auth/logout`,{withCredentials: true});
+      await axios.get(`/api/v1/auth/logout`,{withCredentials: true});
   
       dispatch({ type: logoutsuccess });
     } catch (error) {
@@ -57,7 +57,7 @@ export const logoutUser = () => async (dispatch) => {
 export const loadUser = () => async (dispatch) => {
     try {
       dispatch({ type: loadRequest });
-      const  {data}  = await axios.get(`http://localhost:5000/api/v1/auth/me`, config);
+      const  {data}  = await axios.get(`/api/v1/auth/me`, config);
       dispatch({ type: loadSuccess, payload: data.user });
     } catch (error) {
       dispatch({ type: loadFail, payload: error.response.data.message });
@@ -74,7 +74,7 @@ export const updateProfile = (userData) => async (dispatch) => {
     try {
       dispatch({type:updateProfileRequest});
   
-      const { data } = await axios.put(`http://localhost:5000/api/v1/auth/me/update`, userData, config);
+      const { data } = await axios.put(`/api/v1/auth/me/update`, userData, config);
   
       dispatch({type:updateProfileSuccess,payload:data});
     } catch (error) {
@@ -86,7 +86,7 @@ export const updateProfile = (userData) => async (dispatch) => {
   export const updatePassword = (passwords) => async (dispatch) => {
     try {
       dispatch(updatePasswordRequest());
-      const { data } = await axios.put(`http://localhost:5000/api/v1/auth/change-password`, passwords, config);
+      const { data } = await axios.put(`/api/v1/auth/change-password`, passwords, config);
       dispatch({type:updatePasswordSuccess,payload:data});
     } catch (error) {
       dispatch({type:updatePasswordFail,payload:error});
@@ -98,7 +98,7 @@ export const updateProfile = (userData) => async (dispatch) => {
     try {
       dispatch(forgotPasswordRequest());
       const config = { headers: { "Content-Type": "application/json" } };
-      const { data } = await axios.post(`http://localhost:5000/api/v1/auth/password/forget`, {email}, config);
+      const { data } = await axios.post(`/api/v1/auth/password/forget`, {email}, config);
       dispatch(forgotPasswordSuccess(data));
     } catch (error) {
       dispatch(forgotPasswordFail(error));
@@ -111,10 +111,72 @@ export const updateProfile = (userData) => async (dispatch) => {
       dispatch(resetPasswordRequest());
   
       const config = { headers: { "Content-Type": "application/json" } };
-      const { data } = await axios.put(`http://localhost:5000/api/v1/auth/password/reset/${token}`, passwords, config);
+      const { data } = await axios.put(`/api/v1/auth/password/reset/${token}`, passwords, config);
   
       dispatch(resetPasswordSuccess(data));
     } catch (error) {
       dispatch(resetPasswordFail(error));
     }
   };
+  export const getAllUsers = () => async (dispatch) => {
+    try {
+      dispatch({ type: allUsersRequest });
+      const { data } = await axios.get(`/api/v1/auth/admin/users`,config);
+      dispatch({ type: allUsersSuccess, payload: data.allUser });
+    } catch (error) {
+      dispatch({ type: allUsersFail, payload: error.response.data.message });
+    }
+  };
+
+  export const getUserDetails = (id) => async (dispatch) => {
+    try {
+      dispatch({ type: userDetailsRequest });
+      const { data } = await axios.get(`/api/v1/auth/admin/user/${id}`,config);
+  
+      dispatch({ type: userDetailsSuccess, payload: data.user });
+    } catch (error) {
+      dispatch({ type: userDetailsFail, payload: error.response.data.message });
+    }
+  };
+
+
+  
+  // Update User
+  export const updateUser = (id, userData) => async (dispatch) => {
+    try {
+      dispatch({ type: updateUserRequest });
+  
+      const { data } = await axios.put(
+        `/api/v1/auth/admin/user/${id}`,
+        userData,
+        config
+      );
+      console.log(data)
+      dispatch({ type: updateUserSuccess, payload: data.success });
+    } catch (error) {
+      console.log(error)
+      dispatch({
+       
+        type: updateUserFail,
+        payload: error.response.data.message,
+      });
+    }
+  };
+  
+  // Delete User
+  export const deleteUser = (id) => async (dispatch) => {
+    try {
+      dispatch({ type: deleteUserRequest });
+  
+      const { data } = await axios.delete(`/api/v1/auth/admin/user/${id}`,config);
+  
+      dispatch({ type: deleteUserSuccess, payload: data });
+    } catch (error) {
+      dispatch({
+        type: deleteUserFail,
+        payload: error.response.data.message,
+      });
+    }
+  };
+  
+  

@@ -32,7 +32,7 @@
     gap: 10px;
   }
   
-  img {
+  .registerlogo {
     max-width: 100px;
     max-height: 100px;
     margin-top: 10px;
@@ -70,15 +70,7 @@
     margin: auto;
   }
   
-  label {
-    margin-bottom: 8px;
-  }
+ 
   
-  input,
-  button {
-    margin-bottom: 16px;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
+  
   

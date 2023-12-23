@@ -1,0 +1,135 @@
+.all_products{
+    display: flex;
+}
+.left_part{
+    width: 30%;
+    border-right: 1px solid rgba(0, 0, 0, 0.226);
+
+}
+
+.allProductContainer {
+    display: flex;
+    margin: 1vmax auto;
+    width: 95vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+
+  }
+  .allProductCard > div {
+    margin: 0.5vmax;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .allProductCard {
+    width: 18vmax;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(126, 122, 122);
+    margin: 2vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+    border-radius: 1rem;
+    padding: 1rem;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    border-right: 1px solid rgba(0, 0, 0, 0.226);
+
+  }
+  
+  .allProductCard > img {
+    width: 80%;
+    height: 150px;
+  }
+ 
+  
+
+  .allProductCard > p {
+    font-family: "Roboto";
+    font-size: 1.2vmax;
+    margin: 1vmax 0.5vmax;
+    margin-bottom: 0;
+  }
+  
+  .allProductCard > span {
+    margin: 0.5vmax;
+    color: tomato;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1vmax;
+  }
+  .paginations{
+    padding: 0px auto;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1rem 0;
+  }
+  .allProductCard:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.26);
+  color: tomato;
+    transform: translateY(-1vmax);
+  }
+  .categoriesTag{
+    text-align: start;
+    padding: 0.5rem 2rem;
+  }
+  .categoriesTag h1{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  .categoryBox{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .categoriesTag li:hover{
+    cursor: pointer;
+    color: tomato;
+  }
+  .category-link {
+   display: flex;
+   gap: 0.7rem;
+  }
+  .custom-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #333; /* You can adjust the border color */
+    border-radius: 50%; /* Make it circular */
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 8px; /* Adjust the spacing between checkbox and label */
+    cursor: pointer;
+  }
+  
+  .custom-checkbox:checked {
+    background-color: tomato; /* You can adjust the background color when checked */
+  }
+  .priceTag{
+    width: 80%;
+    text-align: start;
+    padding: 1rem 2rem;
+  }
+  .priceTag h1{
+    font-size: 1.5rem;
+    margin: 1rem 0 0 0;
+  }
+  
+  .ratingTag{
+    width: 80%;
+    display: flex;
+    text-align: start;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+
+  }
+  .ratingTag h1{
+    font-size: 1.5rem;
+    margin: 1rem 0 0 0;
+  }

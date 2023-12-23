@@ -14,7 +14,7 @@ router.get('/products', getProducts);
 router.put('/admin/product/:id',verifyAuthToken, authorizeRoles("admin"), updateproduct);
 router.delete('/admin/product/:id',verifyAuthToken, authorizeRoles("admin"), deleteproduct);
 router.get('/product/:id', getproduct);
-router.get('/admin/product/:id',verifyAuthToken, authorizeRoles("admin"),getAdminProducts);
+router.get('/admin/products',verifyAuthToken, authorizeRoles("admin"),getAdminProducts);
 
 //reviews
 router.put("/review",verifyAuthToken,createProductReview);

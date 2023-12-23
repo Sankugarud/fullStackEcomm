@@ -16,21 +16,35 @@ const UserProfile = () => {
        {loading ? (
       <Loader />
     ) : (
-      <div>
+      <div className="profileContainer">
         <div className="user-image-container">
+          <h1>My Profile</h1>
           <img src={user.avatar.url} alt="User Avatar" className="user-image" />
+          <Link to="/update-profile">Edit Profile</Link>
         </div>
         <div className="user-details">
-          <h2 className="user-name">{user.name}</h2>
-          <p className="user-email">{user.email}</p>
-          <p className="user-role">{user.role}</p>
-          <Link to="/update-profile">
-           
-            <button className="profile-btn">Change Profile</button>
-          </Link>
-          <Link to="/change-password">
-            <button className="profile-btn">Update Password</button>
-          </Link>
+          <div>
+              <h4>Full Name</h4>
+              <p className="user-name">{user.name}</p>
+          </div>
+         <div>
+              <h4>Email</h4>
+              <p className="user-email">{user.email}</p>
+          </div>
+          <div>
+                <h4>Joined On</h4>
+                <p>{String(user.createdAt).substr(0, 10)}</p>
+              </div>
+              <div>
+                <h4>Your Role</h4>
+                <p className="user-role">{user.role}</p>
+              </div>
+          
+               <div>
+                <Link to="/orders">My Orders</Link>
+                <Link to="/change-password">Update Password</Link>
+               </div>
+                
         </div>
       </div>
       
