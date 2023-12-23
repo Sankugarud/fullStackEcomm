@@ -1,5 +1,7 @@
 import React from 'react';
-import { Typography, Stepper, StepLabel, Step } from "@material-ui/core";
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
 import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import LibraryAddCheckIcon from "@material-ui/icons/LibraryAddCheck";
 import AccountBalanceIcon from "@material-ui/icons/AccountBalance";
@@ -8,15 +10,15 @@ const CheckOutPage = ({ activeStep }) => {
 
   const steps = [
     {
-      label: <Typography>Shipping Details</Typography>,
+      label: <p>Shipping Details</p>,
       icon: <LocalShippingIcon />,
     },
     {
-      label: <Typography>Confirm Order</Typography>,
+      label: <p>Confirm Order</p>,
       icon: <LibraryAddCheckIcon />,
     },
     {
-      label: <Typography>Payment</Typography>,
+      label: <p>Payment</p>,
       icon: <AccountBalanceIcon />,
     },
   ];

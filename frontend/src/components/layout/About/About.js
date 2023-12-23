@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import { Button, Typography } from "@material-ui/core";
+import  Button  from "@mui/material/Button";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import InstagramIcon from "@material-ui/icons/Instagram";
 const About = () => {
@@ -12,12 +12,12 @@ const About = () => {
       <div></div>
       <div className="aboutSectionGradient"></div>
       <div className="aboutSectionContainer">
-        <Typography component="h1">About Us</Typography>
+        <p component="h1">About Us</p>
 
         <div>
           <div>
           
-            <Typography>Ecomm</Typography>
+            <p>Ecomm</p>
             <Button onClick={visitInstagram} color="primary">
               Visit Instagram
             </Button>
@@ -26,7 +26,7 @@ const About = () => {
             </span>
           </div>
           <div className="aboutSectionContainer2">
-            <Typography component="h2">Our Brands</Typography>
+            <p component="h2">Our Brands</p>
             <a
               href="https://www.youtube.com/"
               target="blank"

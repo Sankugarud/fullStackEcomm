@@ -8,7 +8,7 @@ import {
   deleteReviews,
 } from "../../redux/action/getproduct";
 import { useAlert } from "react-alert";
-import { Button } from "@material-ui/core";
+import  Button  from "@mui/material/Button";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Star from "@material-ui/icons/Star";
 import { deleteReviewReset } from "../../redux/action/productActionFunction";

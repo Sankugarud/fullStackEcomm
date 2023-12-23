@@ -1,7 +1,6 @@
 import React from "react";
 import ErrorIcon from "@material-ui/icons/Error";
 import "./NotFound.css";
-import { Typography } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {
@@ -9,7 +8,7 @@ const NotFound = () => {
     <div className="PageNotFound">
       <ErrorIcon />
 
-      <Typography>Page Not Found </Typography>
+      <p>Page Not Found </p>
       <Link to="/">Home</Link>
     </div>
   );

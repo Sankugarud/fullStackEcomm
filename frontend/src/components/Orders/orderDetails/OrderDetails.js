@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link,useParams } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 import { getOrderDetails, clearErrors } from "../../redux/action/orderAction";
 import Loader from "../../layout/Loader/Loader";
 import { useAlert } from "react-alert";
@@ -29,10 +28,10 @@ const OrderDetails = () => {
         <Fragment>
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">
-              <Typography component="h1">
+              <p component="h1">
                 Order #{order && order._id}
-              </Typography>
-              <Typography>Shipping Info</Typography>
+              </p>
+              <p>Shipping Info</p>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p>Name:</p>
@@ -52,7 +51,7 @@ const OrderDetails = () => {
                   </span>
                 </div>
               </div>
-              <Typography>Payment</Typography>
+              <p>Payment</p>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p
@@ -76,7 +75,7 @@ const OrderDetails = () => {
                 </div>
               </div>
 
-              <Typography>Order Status</Typography>
+              <p>Order Status</p>
               <div className="orderDetailsContainerBox">
                 <div>
                   <p
@@ -93,7 +92,7 @@ const OrderDetails = () => {
             </div>
 
             <div className="orderDetailsCartItems">
-              <Typography>Order Items:</Typography>
+              <p>Order Items:</p>
               <div className="orderDetailsCartItemsContainer">
                 {order.itemOrder &&
                   order.itemOrder.map((item) => (

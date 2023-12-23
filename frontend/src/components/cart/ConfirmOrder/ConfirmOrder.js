@@ -2,7 +2,6 @@ import React, { Fragment, useEffect } from "react";
 import CheckOutPage from "../CheckOutPage/CheckOutPage";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 import './ConfirmOrder.css'
 import { useAlert } from "react-alert";
 const ConfirmOrder = () => {
@@ -62,7 +61,7 @@ const ConfirmOrder = () => {
           <div className="confirmOrderPage">
             <div>
               <div className="confirmshippingArea">
-                <Typography>Shipping Info</Typography>
+                <p>Shipping Info</p>
                 <div className="confirmshippingAreaBox">
                   <div>
                     <p>Name:</p>
@@ -79,7 +78,7 @@ const ConfirmOrder = () => {
                 </div>
               </div>
               <div className="confirmCartItems">
-                <Typography>Your Cart Items:</Typography>
+                <p>Your Cart Items:</p>
                 <div className="confirmCartItemsContainer">
                   {cartItems.map((item, index) => (
                     <div key={index}>    
@@ -99,7 +98,7 @@ const ConfirmOrder = () => {
 
             <div>
               <div className="orderSummary">
-                <Typography>Order Summary</Typography>
+                <p>Order Summary</p>
                 <div>
                   <div>
                     <p>Subtotal:</p>

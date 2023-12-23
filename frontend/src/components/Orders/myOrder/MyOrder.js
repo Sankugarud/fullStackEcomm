@@ -5,7 +5,6 @@ import { clearErrors, myOrders } from "../../redux/action/orderAction";
 import Loader from "../../layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
 import LaunchIcon from "@material-ui/icons/Launch";
 import './MyOrder.css'
 const MyOrders = () => {
@@ -92,9 +91,9 @@ const MyOrders = () => {
                   autoHeight
                 />
         {user && 
-        <Typography id="myOrdersHeading">
+        <p id="myOrdersHeading">
         {user.name}'s Orders
-      </Typography>}
+      </p>}
                 
               </div>
             )}
