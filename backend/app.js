@@ -7,7 +7,7 @@ const path = require("path");
 
 var cors = require('cors')
 const corsOptions = {
-  origin: 'https://delightful-smakager-f86ef8.netlify.app/',
+  origin: 'https://delightful-smakager-f86ef8.netlify.app',
   credentials: true,
 };
 const cloudinary = require('cloudinary').v2;
