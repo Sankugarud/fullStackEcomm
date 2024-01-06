@@ -7,7 +7,8 @@ const path = require("path");
 
 var cors = require('cors')
 const corsOptions = {
-  origin: '*',  credentials: true,
+  origin: 'https://warm-eclair-3a5dbc.netlify.app/',
+  credentials: true,
 };
 
 const app = express();
