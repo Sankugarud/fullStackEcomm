@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import {Link} from 'react-router-dom'
 import { useNavigate  } from "react-router-dom";
@@ -9,6 +9,7 @@ import AssignmentIndRoundedIcon from '@mui/icons-material/AssignmentIndRounded';
 import UserOptions from './UserOptions';
 const Navbar = () => {
   const [search, setSearch] = useState('');
+  const [auth, setAuth] = useState(false)
   const navigate = useNavigate();
 
   const handlechange = (e) => {  
@@ -20,6 +21,15 @@ const Navbar = () => {
   }
   const { authenticated, user } = useSelector((state) => state.user);
  const {cartItems} = useSelector((state) => state.cart)
+ 
+ 
+ useEffect(() => {
+  if(authenticated){
+    setAuth(true);
+   }else{
+    setAuth(false);
+   }
+ }, [authenticated])
  
   return (
     <div className="navbar">
@@ -47,7 +57,7 @@ const Navbar = () => {
               </div>
            
               <div>
-                {authenticated ? <UserOptions user={user} /> : <AssignmentIndRoundedIcon onClick={() => navigate('/signin')} />}
+                {auth ? <UserOptions user={user} /> : <AssignmentIndRoundedIcon onClick={() => navigate('/signin')} />}
               </div>
           </div>
         </div>
