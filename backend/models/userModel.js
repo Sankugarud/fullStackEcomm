@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
       select: false,
   },
     avatar: {
+      
         public_id: {
           type: String,
           required: true,

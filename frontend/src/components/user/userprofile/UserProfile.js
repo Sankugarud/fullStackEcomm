@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Loader from "../../layout/Loader/Loader";
+import Loader from "../../Layout/Loader/Loader";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./userProfile.css"; // Import your CSS file
 

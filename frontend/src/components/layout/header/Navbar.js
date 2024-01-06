@@ -38,12 +38,17 @@ const Navbar = () => {
                 
             </div>
             <div className="end_side">
-              <ShoppingCartIcon
-                className='cartIcon'
-                style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
-                onClick={() => navigate('/cart')}
-              />
-              {authenticated ? <UserOptions user={user} /> : <AssignmentIndRoundedIcon onClick={() => navigate('/signin')} />}
+              <div className='cartDiv'>
+                <ShoppingCartIcon
+                  className='cartIcon'
+                  style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
+                  onClick={() => navigate('/cart')}
+                />
+              </div>
+           
+              <div>
+                {authenticated ? <UserOptions user={user} /> : <AssignmentIndRoundedIcon onClick={() => navigate('/signin')} />}
+              </div>
           </div>
         </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import Loader from '../../layout/Loader/Loader';
+import Loader from '../../Layout/Loader/Loader';
 import { useDispatch, useSelector  } from 'react-redux';
 import { clearErrors, getproduct } from '../../redux/action/getproduct';
 import AllProducts from '../../Products/AllProducts/AllProducts';
@@ -89,7 +89,6 @@ const Products = () => {
             ))}
             </ul>
             </div>
-            <hr/>
             <div className='priceTag'>
                 <h1>Price</h1>
                 <Slider
@@ -101,7 +100,6 @@ const Products = () => {
                     max={100000}
                 />
             </div>
-            <hr/>
 
             <div className='ratingTag'>
             <fieldset>

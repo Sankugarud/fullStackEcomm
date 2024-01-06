@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link,useParams } from "react-router-dom";
 import { getOrderDetails, clearErrors } from "../../redux/action/orderAction";
-import Loader from "../../layout/Loader/Loader";
+import Loader from "../../Layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import './OrderDetails.css'
 const OrderDetails = () => {
@@ -28,9 +28,9 @@ const OrderDetails = () => {
         <Fragment>
           <div className="orderDetailsPage">
             <div className="orderDetailsContainer">
-              <p component="h1">
+              <h1 component="h1">
                 Order #{order && order._id}
-              </p>
+              </h1>
               <p>Shipping Info</p>
               <div className="orderDetailsContainerBox">
                 <div>

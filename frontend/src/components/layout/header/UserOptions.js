@@ -73,7 +73,7 @@ if(user){
   return (
     <Fragment>
       <div className="chooseMenu">
-      <div onClick={handleClick}>
+      <div onClick={handleClick} className="arrow_Dropdown">
         Dashboard <ArrowDropDownIcon />
       </div>
       <Menu

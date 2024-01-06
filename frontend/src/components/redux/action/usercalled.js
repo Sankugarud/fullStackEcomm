@@ -31,7 +31,12 @@ export const registerUser = ( {email,password,name,avatar}) => async (dispatch) 
            
         dispatch({type:registerSuccess, payload:data.user})
     } catch (error) {
+      if(error.response.data.error.message === 'User validation failed: password: Password should be greater than 8 characters'){
+        dispatch({type:registerFail, payload: error.response.data.error.message});
+      }else{
         dispatch({type:registerFail, payload: error.response.data.error});
+      }
+       
     }   
 }
 

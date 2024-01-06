@@ -1,6 +1,6 @@
 // cartReducer.js
 
-import { addTocart, removeCartItem, saveShippingInfo } from "../action/cartAction";
+import { addTocart, clearcartitem, removeCartItem, saveShippingInfo } from "../action/cartAction";
 
 const initialState = {
   cartItems: [],
@@ -33,7 +33,11 @@ export const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: state.cartItems.filter((i) => i.product !== action.payload),
       };
-
+      case clearcartitem:
+        return{
+          ...state,
+          cartItems: [], 
+        }
     case saveShippingInfo:
       return {
         ...state,
@@ -44,4 +48,3 @@ export const cartReducer = (state = initialState, action) => {
       return state;
   }
 };
-

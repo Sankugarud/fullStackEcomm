@@ -1,15 +1,14 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 import {
   getOrderDetails,
   clearErrors,
   updateOrder,
 } from "../../redux/action/orderAction";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "../../layout/Loader/Loader";
+import Loader from "../../Layout/Loader/Loader";
 import { useAlert } from "react-alert";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import  Button  from "@mui/material/Button";
 import { updateOrderReset } from "../../redux/action/orderActionFunction";
 import "./ProcessOrder.css";
@@ -56,21 +55,21 @@ const ProcessOrder = () => {
 
   return (
     <Fragment>
-      <div className="dashboard">
-        <div className="newProductContainer">
+      <div className="confirmDashboard">
+        <div className="newProductCartContainer">
           {loading ? (
             <Loader />
           ) : (
             <div
-              className="confirmOrderPage"
+              className="confirmOrderCartPage"
               style={{
                 display: order.orderStatus === "Delivered" ? "block" : "grid",
               }}
             >
               <div>
                 <div className="confirmshippingArea">
-                  <Typography>Shipping Info</Typography>
-                  <div className="orderDetailsContainerBox">
+                  <p>Shipping Info</p>
+                  <div className="orderUpdateContainerBox">
                     <div>
                       <p>Name:</p>
                       <span>{order.user && order.user.name}</span>
@@ -90,8 +89,8 @@ const ProcessOrder = () => {
                     </div>
                   </div>
 
-                  <Typography>Payment</Typography>
-                  <div className="orderDetailsContainerBox">
+                  <p>Payment</p>
+                  <div className="orderUpdateContainerBox">
                     <div>
                       <p
                         className={
@@ -114,8 +113,8 @@ const ProcessOrder = () => {
                     </div>
                   </div>
 
-                  <Typography>Order Status</Typography>
-                  <div className="orderDetailsContainerBox">
+                  <p>Order Status</p>
+                  <div className="orderUpdateContainerBox">
                     <div>
                       <p
                         className={
@@ -129,12 +128,12 @@ const ProcessOrder = () => {
                     </div>
                   </div>
                 </div>
-                <div className="confirmCartItems">
-                  <Typography>Your Cart Items:</Typography>
-                  <div className="confirmCartItemsContainer">
-                    {order.orderItems &&
-                      order.orderItems.map((item) => (
-                        <div key={item.product}>
+                <div className="confirmCartUpdate">
+                  <p>Your Cart Items:</p>
+                  <div className="confirmCartUpdateContainer">
+                    {order.itemOrder &&
+                      order.itemOrder.map((item) => (
+                        <div key={item.product} className="confirmupdate">
                           <img src={item.image} alt="Product" />
                           <Link to={`/product/${item.product}`}>
                             {item.name}
@@ -149,7 +148,7 @@ const ProcessOrder = () => {
                 </div>
               </div>
               {/*  */}
-              <div
+              <div className="orderContainerRightSide"
                 style={{
                   display: order.orderStatus === "Delivered" ? "none" : "block",
                 }}
@@ -175,7 +174,7 @@ const ProcessOrder = () => {
                   </div>
 
                   <Button
-                    id="createProductBtn"
+                    id="createOrderBtn"
                     type="submit"
                     disabled={
                       loading ? true : false || status === "" ? true : false

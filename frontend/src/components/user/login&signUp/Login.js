@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser, clearErrors, loadUser } from '../../redux/action/usercalled';
 import { useNavigate, Link } from 'react-router-dom';
-import Loader from '../../layout/Loader/Loader';
+import Loader from '../../Layout/Loader/Loader';
 import { useAlert } from 'react-alert';
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
 import LockOpenOutlinedIcon from '@mui/icons-material/LockOpenOutlined';

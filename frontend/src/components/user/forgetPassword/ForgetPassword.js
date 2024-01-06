@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { forgotPassword } from "../../redux/action/usercalled";
 import "./ForgetPassword.css";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { useAlert } from "react-alert";
 
 const ForgotPassword = () => {

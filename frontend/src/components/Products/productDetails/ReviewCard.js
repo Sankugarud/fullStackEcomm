@@ -1,4 +1,4 @@
-import { Rating } from "@mui/lab";
+import { Rating } from "@mui/material";
 import React from "react";
 
 const ReviewCard = ({ review }) => {

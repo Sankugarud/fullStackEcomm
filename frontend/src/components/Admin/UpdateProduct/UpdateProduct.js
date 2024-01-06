@@ -7,11 +7,11 @@ import {
 } from "../../redux/action/getproduct";
 import { useAlert } from "react-alert";
 import  Button  from "@mui/material/Button";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import DescriptionIcon from "@mui/icons-material/Description";
+import StorageIcon from "@mui/icons-material/Storage";
+import SpellcheckIcon from "@mui/icons-material/Spellcheck";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import './UpdateProduct.css'
 import { updateProductReset } from "../../redux/action/productActionFunction";
 import { useNavigate, useParams } from "react-router-dom";
@@ -110,7 +110,7 @@ const UpdateProduct = () => {
   
   return (
     <Fragment>
-      <div className="updateDashboard">
+      <div className="productDashboard">
         <div className="updateProductContainer">
           <form
             className="updateProductForm"

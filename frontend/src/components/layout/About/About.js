@@ -1,8 +1,8 @@
 import React from "react";
 import "./About.css";
 import  Button  from "@mui/material/Button";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import InstagramIcon from "@mui/icons-material/Instagram";
 const About = () => {
   const visitInstagram = () => {
     window.location = "https://instagram.com";

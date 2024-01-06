@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { productDetails, newReview } from '../../redux/action/getproduct';
-import Loader from '../../layout/Loader/Loader';
+import Loader from '../../Layout/Loader/Loader';
 import { clearErrors } from '../../redux/action/usercalled';
 import { useAlert } from 'react-alert';
 import { addItemsToCart } from '../../redux/action/getCarts';

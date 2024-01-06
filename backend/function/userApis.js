@@ -8,7 +8,6 @@ const bcrypt = require('bcryptjs');
 
 exports.registerUser = async (req, res) => {
     try {
-
       const existingUser = await users.findOne({email:req.body.email});
       if (existingUser) {
         // Email already in use, respond with an error
@@ -24,7 +23,6 @@ exports.registerUser = async (req, res) => {
             })
         }
         const user = await users.create(req.body);
-        
         const token = user.generateAuthToken();
         res.cookie('jwt', token, {
             httpOnly: true,

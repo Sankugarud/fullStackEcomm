@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearErrors } from "../../redux/action/usercalled";
 import { createOrder } from "../../redux/action/orderAction";
 import { useNavigate } from "react-router-dom";
+import { clearcartitem } from "../../redux/action/cartAction";
 
 const Payment = () => {
   const dispatch = useDispatch();
@@ -51,9 +52,9 @@ const Payment = () => {
 
           // Set the flag to true to prevent multiple dispatches
           setOrderDispatched(true);
-          console.log("Removing cartItems from localStorage");
 
           localStorage.removeItem("cartItems");
+          dispatch({type:clearcartitem})
           // Navigate after dispatching the order
           navigate("/orders");
 
@@ -77,7 +78,7 @@ const Payment = () => {
       "modal": {
         escape: false,
         "ondismiss": function(){
-             window.location.replace("//put your redirect URL");
+             window.location.replace("/cart");
          }
     },
       prefill: {

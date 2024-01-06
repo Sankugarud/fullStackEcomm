@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { addItemsToCart, removeItemsFromCart } from "../../redux/action/getCarts";
 import { Link,useNavigate } from 'react-router-dom';
-import RemoveShoppingCartIcon from "@material-ui/icons/RemoveShoppingCart";
+import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import { Typography } from '@mui/material';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import './cartComponents.css'

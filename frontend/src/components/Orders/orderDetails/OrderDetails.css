@@ -3,13 +3,13 @@
   }
   
   .orderDetailsContainer > h1 {
-    font: 300 3vmax "Roboto";
+    font: 300 2vmax "Roboto";
     margin: 1vmax 0;
     color: tomato;
   }
   
   .orderDetailsContainer {
-    padding: 5vmax;
+    padding: 2vmax 5vmax;
     padding-bottom: 0%;
   }
   
@@ -25,6 +25,7 @@
   .orderDetailsContainerBox > div {
     display: flex;
     margin: 1vmax 0;
+    align-items: center;
   }
   
   .orderDetailsContainerBox > div > p {

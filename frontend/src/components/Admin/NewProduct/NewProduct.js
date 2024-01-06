@@ -4,11 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, createProduct } from "../../redux/action/getproduct";
 import { useAlert } from "react-alert";
 import  Button  from "@mui/material/Button";
-import AccountTreeIcon from "@material-ui/icons/AccountTree";
-import DescriptionIcon from "@material-ui/icons/Description";
-import StorageIcon from "@material-ui/icons/Storage";
-import SpellcheckIcon from "@material-ui/icons/Spellcheck";
-import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
+import DescriptionIcon from "@mui/icons-material/Description";
+import StorageIcon from "@mui/icons-material/Storage";
+import SpellcheckIcon from "@mui/icons-material/Spellcheck";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { newProductReset } from "../../redux/action/productActionFunction";
 import { useNavigate } from "react-router-dom";
 
@@ -69,7 +69,7 @@ const NewProduct = () => {
 
   return (
     <Fragment>
-      <div className="dashboard">
+      <div className="productDashboard">
         <div className="newProductContainer">
           <form
             className="createProductForm"

@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     margin: 2rem 5rem;
-
+    gap: 2rem;
 }
 .blurLine {
     height: 1px;
@@ -19,12 +19,13 @@
     color: #999696be;
     text-align: start;
   }
-  .CarouselImage {
-    width: 50%;
-    margin-top: 2rem;
+  .CarouselImages{
+    width: 100%;
+    margin-top: 5rem;
+
   }
   .CarouselImage{
-    width:20rem
+    width:50%;
   }
 
   .detailBlock{
@@ -180,7 +181,7 @@
     color: #000000be;
     font: 500 1.4vmax "Roboto";
     text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+    border-bottom: 1px solid rgba(2, 0, 0, 0.226);
     padding: 1vmax;
     width: 20vmax;
     margin: auto;

@@ -9,8 +9,8 @@ import {
 } from "../../redux/action/getproduct";
 import { useAlert } from "react-alert";
 import  Button  from "@mui/material/Button";
-import DeleteIcon from "@material-ui/icons/Delete";
-import Star from "@material-ui/icons/Star";
+import DeleteIcon from "@mui/icons-material/Delete";
+import Star from "@mui/icons-material/Star";
 import { deleteReviewReset } from "../../redux/action/productActionFunction";
 import { useNavigate } from "react-router-dom";
 
@@ -127,7 +127,7 @@ const ProductReviews = () => {
   return (
     <Fragment>
 
-      <div className="dashboard">
+      <div className="productDashboard">
         <div className="productReviewsContainer">
           <form
             className="productReviewsForm"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Fade } from '@mui/material';
+import { Box, Fade } from '@mui/material';
 import PropTypes from 'prop-types';
 import './SwitchTabs.css'
 
@@ -16,7 +16,7 @@ const TabPanel = (props) => {
     >
       <Fade in={value === index}>
         <Box p={3}>
-          <Typography>{children}</Typography>
+          <p>{children}</p>
         </Box>
       </Fade>
     </div>

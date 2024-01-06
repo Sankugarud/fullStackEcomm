@@ -1,14 +1,14 @@
 import React, { Fragment, useState, useEffect } from "react";
 import "./UpdatePassword.css";
 import { useNavigate } from "react-router-dom";
-import Loader from '../../layout/Loader/Loader';
+import Loader from '../../Layout/Loader/Loader';
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, updatePassword,loadUser } from "../../redux/action/usercalled";
 import { useAlert } from "react-alert";
 import { updatePasswordReset } from "../../redux/action/userAction";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import LockIcon from "@material-ui/icons/Lock";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+import LockIcon from "@mui/icons-material/Lock";
+import VpnKeyIcon from "@mui/icons-material/VpnKey";
 
 const UpdatePassword = ({ history }) => {
   const dispatch = useDispatch();

@@ -4,11 +4,11 @@ import { clearErrors, loadUser, registerUser } from '../../redux/action/usercall
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { MenuItem, Select, FormControl,Avatar  } from '@mui/material';
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import LockOpenIcon from "@material-ui/icons/LockOpen";
-import FaceIcon from "@material-ui/icons/Face";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+import FaceIcon from "@mui/icons-material/Face";
 import './SwitchTabs.css'; 
-import Loader from '../../layout/Loader/Loader';
+import Loader from '../../Layout/Loader/Loader';
 import { useAlert } from 'react-alert';
 
 const RegisterForm = () => {
@@ -72,9 +72,7 @@ const RegisterForm = () => {
         <form onSubmit={handleSubmit}  className="signUpForm">
           <div className='logo-selection'>
             <FormControl className='formcontrol'>
-              {/* <div>
-               <InputLabel id="logo-dropdown-label">Select Logo</InputLabel>
-              </div> */}
+             
               <div className='logo-items'>
                 <Select
                 labelId="logo-dropdown-label"

@@ -112,4 +112,3 @@ export const deleteReviewFail = (error) => ({
   payload: error,
 });
 export const clearError = () => ({ type: error_clear });
-

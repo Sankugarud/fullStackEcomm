@@ -5,7 +5,6 @@ const ApiFeatures = require('../utils/apifeatcher.js');
 exports.createProduct = async (req, res) => {
        
         try {
-          console.log(req.body)
             req.body.user = req.user._id;
             const product = await Products.create(req.body);
             
@@ -144,7 +143,6 @@ exports.deleteproduct = async (req,res)=>{
 //create or update product reviews
 exports.createProductReview = async (req, res) => {
     try {
-      console.log(req.body)
         const { rating, comment, productId } = req.body;
         if (!req.user) {
             return res.status(401).json({

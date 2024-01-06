@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
+import Font from 'react-font'
 
 const options = {
   // you can also just use 'bottom center'
@@ -25,13 +26,12 @@ root.render(
     <BrowserRouter>
       <Provider store={store}>
         <AlertProvider template={AlertTemplate} {...options}>
-          <App />
+          <Font  family='Roboto' weight={500}>
+            <App />
+          </Font >
         </AlertProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

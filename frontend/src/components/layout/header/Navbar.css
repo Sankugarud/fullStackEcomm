@@ -8,7 +8,6 @@
     justify-content: center;
     text-align: center;
     transition: all 0.5s;
-
 }
 .left_side{
     width: 10%;
@@ -29,6 +28,7 @@
     display: flex;
     gap: 2rem;
     transition: all 0.5s;
+   
 }
 .middle_side{
     width: 70%;
@@ -54,9 +54,6 @@
     color: tomato;
 }
 
-.cartIcon {
-    cursor: pointer;
-}
 
 
 .middle_side a{
@@ -73,6 +70,11 @@
     width: 100%;
     padding: 0.5rem 2rem;
     border-radius: 1.2rem;
+    border: none;
+    transition: all 10s;
+}
+.middle_side input:hover{
+    border: 1px solid black;
 }
 .end_side{
     justify-items: center;
@@ -83,9 +85,15 @@
     display: flex;
     gap: 2rem;
     transition: all 0.5s;
-
 }
 .end_side svg {
     margin: auto 0px;
+    cursor: pointer;
+}
+.arrow_Dropdown{
+    display: flex;
+    align-items: center;
+}
+.cartIcon {
     cursor: pointer;
 }

@@ -11,7 +11,7 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import './Home.css'
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import Loader from '../layout/Loader/Loader';
+import Loader from '../Layout/Loader/Loader';
 import { clearErrors, getproduct } from '../redux/action/getproduct';
 import { useAlert } from 'react-alert';
 import ProductCard from './ProductCard';
@@ -72,7 +72,6 @@ const handleClick = () => {
   }
   dispatch(getproduct())
   }, [dispatch,alert,error])
-  
   return (
     <div>
         {loading ? (
@@ -141,7 +140,7 @@ const handleClick = () => {
     )}
     <div className="productContainer" id="productContainer">
             {products.product &&
-              products.product.slice(-5).map((product) => (
+              products.product.slice(-4).map((product) => (
                 <ProductCard key={product._id} product={product} />
               ))}
           </div>

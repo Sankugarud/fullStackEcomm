@@ -2,16 +2,16 @@ import React, { Fragment, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useAlert } from "react-alert";
 import  Button  from "@mui/material/Button";
-import MailOutlineIcon from "@material-ui/icons/MailOutline";
-import PersonIcon from "@material-ui/icons/Person";
-import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import PersonIcon from "@mui/icons-material/Person";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import { updateUserReset } from "../../redux/action/userAction";
 import {
   getUserDetails,
   updateUser,
   clearErrors,
 } from "../../redux/action/usercalled";
-import Loader from "../../layout/Loader/Loader";
+import Loader from "../../Layout/Loader/Loader";
 import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateUser = () => {
@@ -79,7 +79,7 @@ const UpdateUser = () => {
 
   return (
     <Fragment>
-      <div className="dashboard">
+      <div className="productDashboard">
         <div className="newProductContainer">
           {loading ? (
             <Loader />

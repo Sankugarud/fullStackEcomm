@@ -2,10 +2,10 @@ import React, {  useEffect } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, myOrders } from "../../redux/action/orderAction";
-import Loader from "../../layout/Loader/Loader";
+import Loader from "../../Layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
-import LaunchIcon from "@material-ui/icons/Launch";
+import LaunchIcon from "@mui/icons-material/Launch";
 import './MyOrder.css'
 const MyOrders = () => {
     const dispatch = useDispatch();

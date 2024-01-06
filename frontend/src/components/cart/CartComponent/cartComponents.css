@@ -95,6 +95,8 @@
   .cartName a{
     text-transform: capitalize;
     font-size: 1.2rem;
+    text-decoration: none;
+    color: rgb(66, 64, 64);
   }
   .price{
     color: green;
@@ -129,10 +131,11 @@
     display: flex;
     justify-content: space-between;
   }
-  .shippingChanges{
+  .shippingChanges p{
     font-size: 1rem;
     color: rgb(71, 71, 71);
   }
+  
   .cartGrossProfitBox{
     display: flex;
     justify-content: space-between;
@@ -148,6 +151,7 @@
     color: white;
     font-size: 1rem;
     padding: 0.5rem 0;
-    
+    border: none;
+    cursor: pointer;
   }
   

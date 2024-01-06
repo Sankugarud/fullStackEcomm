@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import  Button  from "@mui/material/Button";
-import EditIcon from "@material-ui/icons/Edit";
-import DeleteIcon from "@material-ui/icons/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { getAllUsers, clearErrors, deleteUser } from "../../redux/action/usercalled";
 import { deleteUserReset } from "../../redux/action/userAction";
 
@@ -116,7 +116,7 @@ const UserList = () => {
   return (
     <Fragment>
 
-      <div className="dashboard">
+      <div className="productDashboard">
         <div className="productListContainer">
           <h1 id="productListHeading">ALL USERS</h1>
 

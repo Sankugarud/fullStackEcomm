@@ -4,7 +4,6 @@ const Products = require('../models/productModel')
 
 exports.createOrder = async (req, res) => {
     try {
-      console.log(req.body);
         const {
             shippingInfo,
             itemOrder,
@@ -28,7 +27,6 @@ exports.createOrder = async (req, res) => {
             order:order
         })
     } catch (error) {
-      console.log(error)
          res.status(501).json({
             success:false,
             error:error
@@ -115,7 +113,6 @@ exports.getAllOrders = async (req, res) => {
   //update order - admin
   exports.updateOrder = async (req, res) => {
     const order = await Orders.findById(req.params.id);
-    console.log(order)
     if (!order) {
       return res.status(404).json({
         success: false,
