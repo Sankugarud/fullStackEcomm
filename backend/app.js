@@ -7,16 +7,9 @@ const path = require("path");
 
 var cors = require('cors')
 const corsOptions = {
-  origin: 'https://delightful-smakager-f86ef8.netlify.app',
-  credentials: true,
+  origin: ['http://localhost:3000', 'https://warm-eclair-3a5dbc.netlify.app'],  credentials: true,
 };
-const cloudinary = require('cloudinary').v2;
 
-cloudinary.config({
-  cloud_name: 'your_cloud_name',
-  api_key: 'your_api_key',
-  api_secret: 'your_api_secret',
-});
 const app = express();
 app.use(cors(corsOptions))
 app.use(express.json());
@@ -24,9 +17,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-// });
+
 
 const Productroutes = require('./router/productRouter');
 const orderroutes = require('./router/orderRouter');
