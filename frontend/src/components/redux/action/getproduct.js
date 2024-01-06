@@ -38,14 +38,14 @@ import { productRequest,
   
   
   export const getproduct = (keyword="",currentPage = 1,price=[0,25000],category, ratings = 0) => async (dispatch) => {
-     let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`
+     let link = `https://backend-4kbe.onrender.com/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`
   
      if (category) {
       const lowercaseCategory = category.toLowerCase();
       if(category === 'All'){
-          link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`
+          link = `https://backend-4kbe.onrender.com/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`
       }else{
-          link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${lowercaseCategory}&ratings[gte]=${ratings}`;
+          link = `https://backend-4kbe.onrender.com/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&category=${lowercaseCategory}&ratings[gte]=${ratings}`;
   
       }
     }
@@ -68,7 +68,7 @@ import { productRequest,
   export const productDetails = (id) => async (dispatch) => {
       try {
               dispatch({ type: productDetailRequest });
-        const { data } = await axios.get(`/api/v1/product/${id}`);
+        const { data } = await axios.get(`https://backend-4kbe.onrender.com/api/v1/product/${id}`);
         dispatch({ type: productDetailSuccess, payload: data });
       } catch (error) {
         dispatch({
@@ -81,7 +81,7 @@ import { productRequest,
       try {
         dispatch({ type: adminProductRequest });
     
-        const { data } = await axios.get("/api/v1/admin/products",config);
+        const { data } = await axios.get("https://backend-4kbe.onrender.com/api/v1/admin/products",config);
         dispatch({
           type: adminProductSuccess,
           payload: data.products,
@@ -101,7 +101,7 @@ import { productRequest,
     
   
         const { data } = await axios.post(
-          `/api/v1/admin/product/new`,
+          `https://backend-4kbe.onrender.com/api/v1/admin/product/new`,
           productData,
           config
         );
@@ -127,7 +127,7 @@ import { productRequest,
     
       
         const { data } = await axios.put(
-          `/api/v1/admin/product/${id}`,
+          `https://backend-4kbe.onrender.com/api/v1/admin/product/${id}`,
           productData,
           config
         );
@@ -149,7 +149,7 @@ import { productRequest,
       try {
         dispatch({ type: deleteProductRequest });
     
-        const { data } = await axios.delete(`/api/v1/admin/product/${id}`,config);
+        const { data } = await axios.delete(`https://backend-4kbe.onrender.com/api/v1/admin/product/${id}`,config);
     
         dispatch({
           type: deleteProductSuccess,
@@ -170,7 +170,7 @@ import { productRequest,
         dispatch({ type: newReviewRequest });
           console.log(reviewData)
       
-        const { data } = await axios.put(`/api/v1/review`, reviewData, config);
+        const { data } = await axios.put(`https://backend-4kbe.onrender.com/api/v1/review`, reviewData, config);
     
         dispatch({
           type: newReviewSuccess,
@@ -190,7 +190,7 @@ import { productRequest,
       try {
         dispatch({ type: allReviewRequest });
     
-        const { data } = await axios.get(`/api/v1/review?id=${id}`,config);
+        const { data } = await axios.get(`https://backend-4kbe.onrender.com/api/v1/review?id=${id}`,config);
         dispatch({
           type: allReviewSuccess,
           payload: data.reviews,
@@ -209,7 +209,7 @@ import { productRequest,
         dispatch({ type: deleteReviewRequest });
     
         const { data } = await axios.delete(
-          `/api/v1/review?id=${reviewId}&productId=${productId}`,config
+          `https://backend-4kbe.onrender.com/api/v1/review?id=${reviewId}&productId=${productId}`,config
         );
     
         dispatch({
