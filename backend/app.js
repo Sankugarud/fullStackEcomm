@@ -7,7 +7,7 @@ const path = require("path");
 
 var cors = require('cors')
 const corsOptions = {
-  origin: 'https://65994da16270e6d04f27538a--reliable-kitsune-8dee9e.netlify.app',
+  origin: 'https://backend-4kbe.onrender.com',
   credentials: true,
 };
 const cloudinary = require('cloudinary').v2;
