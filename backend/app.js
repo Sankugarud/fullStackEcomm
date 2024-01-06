@@ -7,8 +7,7 @@ const path = require("path");
 
 var cors = require('cors')
 const corsOptions = {
-  origin: 'https://warm-eclair-3a5dbc.netlify.app',
-  credentials: true,
+  origin: ['http://localhost:3000', 'https://warm-eclair-3a5dbc.netlify.app'],  credentials: true,
 };
 const cloudinary = require('cloudinary').v2;
 
