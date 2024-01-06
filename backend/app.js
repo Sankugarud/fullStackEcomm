@@ -7,15 +7,12 @@ const path = require("path");
 
 var cors = require('cors')
 const corsOptions = {
-  origin: ['http://localhost:3000', 'https://warm-eclair-3a5dbc.netlify.app'],  credentials: true,
+  origin: '*',
+  credentials: true,
 };
-const cloudinary = require('cloudinary').v2;
 
-cloudinary.config({
-  cloud_name: 'your_cloud_name',
-  api_key: 'your_api_key',
-  api_secret: 'your_api_secret',
-});
+
+
 const app = express();
 app.use(cors(corsOptions))
 app.use(express.json());
