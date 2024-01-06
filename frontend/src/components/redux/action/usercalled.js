@@ -13,7 +13,6 @@ export const loginUser = ({email, password}) => async (dispatch) => {
     })
         dispatch({type:loginSuccess, payload:data.user});
     } catch (error) {
-      console.log(error)
         dispatch({type:loginFail, payload:error.response.data.error});
     }
 }
@@ -64,10 +63,8 @@ export const loadUser = () => async (dispatch) => {
     try {
       dispatch({ type: loadRequest });
       const  {data}  = await axios.get(`https://backend-4kbe.onrender.com/api/v1/auth/me`, config);
-      console.log(data)
       dispatch({ type: loadSuccess, payload: data.user });
     } catch (error) {
-      console.log(error)
       dispatch({ type: loadFail, payload: error.response.data.message });
     }
   };
