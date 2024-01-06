@@ -7,18 +7,9 @@ const path = require("path");
 
 var cors = require('cors')
 const corsOptions = {
-<<<<<<< HEAD
-  origin: ['http://localhost:3000', 'https://warm-eclair-3a5dbc.netlify.app'],  credentials: true,
+  origin: '*',  credentials: true,
 };
 
-=======
-  origin: '*',
-  credentials: true,
-};
-
-
-
->>>>>>> 38ffd8785657376c284e28f07879e971a7b345ca
 const app = express();
 app.use(cors(corsOptions))
 app.use(express.json());
