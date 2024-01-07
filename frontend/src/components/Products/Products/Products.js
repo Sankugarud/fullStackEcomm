@@ -32,7 +32,8 @@ const Products = () => {
       "EarPhones",
       "Camera",
       "SmartPhone",
-      "watch"
+      "watch",
+      "Toys"
     ];
       
       //change price filter function

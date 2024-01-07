@@ -4,7 +4,7 @@ import { addTocart, removeCartItem, saveShippingInfo } from "./cartAction";
 // Add to Cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
   try {
-    const { data } = await axios.get(`https://backend-4kbe.onrender.com/api/v1/product/${id}`);
+    const { data } = await axios.get(`https://backend-0xvl.onrender.com/api/v1/product/${id}`);
     
     const flattenedItem = {
       product: data.product._id,

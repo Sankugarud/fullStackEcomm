@@ -35,7 +35,7 @@ const config= {
 export const createOrder = (order) => async (dispatch) => {
   try {
     dispatch(createOrderRequest());
-    const { data } = await axios.post("https://backend-4kbe.onrender.com/api/v1/order/new", order, config);
+    const { data } = await axios.post("https://backend-0xvl.onrender.com/api/v1/order/new", order, config);
 
     dispatch(createOrderSuccess(data));
   } catch (error) {
@@ -48,7 +48,7 @@ export const createOrder = (order) => async (dispatch) => {
 export const myOrders = () => async (dispatch) => {
   try {
     dispatch({type:myOrderRequest});
-    const { data } = await axios.get("https://backend-4kbe.onrender.com/api/v1/orders/user",config);
+    const { data } = await axios.get("https://backend-0xvl.onrender.com/api/v1/orders/user",config);
     dispatch({type:myOrderSuccess, payload:data.order});
   } catch (error) {
     console.log(error)
@@ -61,7 +61,7 @@ export const getAllOrders = () => async (dispatch) => {
   try {
     dispatch({type:allOrderRequest});
 
-    const { data } = await axios.get("https://backend-4kbe.onrender.com/api/v1/admin/orders",config);
+    const { data } = await axios.get("https://backend-0xvl.onrender.com/api/v1/admin/orders",config);
     dispatch({type:allOrderSuccess,payload:data.order});
   } catch (error) {
     dispatch({type:allOrderFail,payload:error.response.data.message});
@@ -79,7 +79,7 @@ export const updateOrder = (id, order) => async (dispatch) => {
       },
     };
     const { data } = await axios.put(
-      `https://backend-4kbe.onrender.com/api/v1/admin/order/${id}`,
+      `https://backend-0xvl.onrender.com/api/v1/admin/order/${id}`,
       order,
       config
     );
@@ -95,7 +95,7 @@ export const deleteOrder = (id) => async (dispatch) => {
   try {
     dispatch(deleteOrderRequest());
 
-    const { data } = await axios.delete(`https://backend-4kbe.onrender.com/api/v1/admin/order/${id}`,config);
+    const { data } = await axios.delete(`https://backend-0xvl.onrender.com/api/v1/admin/order/${id}`,config);
 
     dispatch(deleteOrderSuccess(data.success));
   } catch (error) {
@@ -108,7 +108,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({type:orderDetailRequest});
 
-    const { data } = await axios.get(`https://backend-4kbe.onrender.com/api/v1/order/${id}`,config);
+    const { data } = await axios.get(`https://backend-0xvl.onrender.com/api/v1/order/${id}`,config);
 
     dispatch({type:orderDetailSuccess,payload:data.order});
   } catch (error) {
